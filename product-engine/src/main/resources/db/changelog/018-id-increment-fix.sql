@@ -1,0 +1,1 @@
+ALTER SEQUENCE IF EXISTS payment_schedule_seq INCREMENT 1

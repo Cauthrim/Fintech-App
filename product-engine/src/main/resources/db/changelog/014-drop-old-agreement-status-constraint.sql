@@ -1,0 +1,1 @@
+ALTER TABLE agreement DROP CONSTRAINT agreement_status_check RESTRICT;

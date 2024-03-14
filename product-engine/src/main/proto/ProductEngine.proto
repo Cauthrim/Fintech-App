@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.academy.fintech.pe;
+
+option java_multiple_files = true;
+
+service ProductEngineService {
+  rpc getPeriodPayment(LoanParameters) returns (PeriodPayment) {}
+  rpc getOverduePaymentDates(ClientId) returns (OverduePaymentDates) {}
+}
+
+message LoanParameters {
+  string interest = 1;
+  string disbursementAmount = 2;
+  string originationAmount = 3;
+  int32 term = 4;
+}
+
+message PeriodPayment {
+  string payment = 1;
+}
+
+message ClientId {
+  string clientId = 1;
+}
+
+message OverduePaymentDates {
+  repeated string dueDate = 1;
+}

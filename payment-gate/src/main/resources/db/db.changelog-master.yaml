@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/001-create-pg-schema.sql
+  - include:
+      file: classpath:/db/changelog/002-disbursement-payments-table.sql

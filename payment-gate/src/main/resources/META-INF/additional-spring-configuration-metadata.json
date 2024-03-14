@@ -1,0 +1,12 @@
+{
+  "properties": [
+    {
+      "name": "merchant.disbursement.request_url",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "merchant.disbursement.status_url",
+      "type": "java.lang.String"
+    }
+  ]
+}

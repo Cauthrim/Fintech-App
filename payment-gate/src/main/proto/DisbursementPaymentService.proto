@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.academy.fintech.payment;
+
+option java_multiple_files = true;
+
+service RequestedDisbursementPaymentService {
+  rpc requestDisbursement(DisbursementRequest) returns (DisbursementRequestResponse) {}
+}
+
+service ProcessedDisbursementPaymentService {
+  rpc confirmDisbursement(ProcessedDisbursementPayment) returns (Empty) {}
+}
+
+message DisbursementRequest {
+  string email = 1;
+  int32 disbursementAmount = 2;
+}
+
+message DisbursementRequestResponse {
+  string paymentId = 1;
+}
+
+message ProcessedDisbursementPayment {
+  string paymentId = 1;
+}
+
+message Empty {}

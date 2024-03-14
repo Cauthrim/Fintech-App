@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.academy.fintech.agreement;
+
+option java_multiple_files = true;
+
+service AgreementService {
+  rpc activateAgreement(AgreementActivation) returns (ProtoPaymentSchedule) {}
+  rpc createAgreement(ProtoAgreement) returns (ProtoAgreementId) {}
+}
+
+message AgreementActivation {
+  string agreementId = 1;
+  string date = 2;
+}
+
+message ProtoPaymentSchedule {
+  int32 id = 1;
+  string agreementId = 2;
+  int32 version = 3;
+}
+
+message ProtoAgreement {
+  string productCode = 1;
+  string clientId = 2;
+  string interest = 3;
+  int32 term = 4;
+  string disbursementAmount = 5;
+  string originationAmount = 6;
+}
+
+message ProtoAgreementId {
+  string id = 1;
+}
